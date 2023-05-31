@@ -53,3 +53,32 @@ for (let i = 0; i < teamArray.length; i++){
         console.log(`Value: ${temaInfo[key]}`);
     }
 }
+
+// RECUPERO GRIGLIA HTML
+const grid = document.getElementById('grid');
+
+// CICLO FOR CHE SCORRE TUTTI GLI ELEMENTI DEL TEAM_ARRAY
+for (let i = 0; i < teamArray.length; i++){
+    
+    // INSERIMENTO DENTRO UNA VARIABILE OGNI ELEMENTO DELLA SEGUENTE ITERAZIONE
+    let teamInfo = teamArray[i];
+
+    // VARIABILE CONTENTE GLI ELEMENTI DA INSERIRE NEL DOM
+    let domContent = `
+    
+    <div class="col-3 py-2 border">
+        <h1 class="fs-5">${teamInfo.nome}</h1>
+    </div>
+    
+    <div class="col-3 py-2 border">
+        <span>${teamInfo.ruolo}</span>
+    </div>
+    
+    <div class="col-4 py-2 border">
+        <span>${teamInfo.foto}</span>
+    </div>
+    `
+
+    // MOSTRO DATI IN HTML
+    grid.innerHTML += (domContent);
+}
